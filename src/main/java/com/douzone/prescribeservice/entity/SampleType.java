@@ -1,7 +1,6 @@
 package com.douzone.prescribeservice.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -11,16 +10,15 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "inspection_status")
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@Table
 @Data
-public class Status {
-    @Id
-    @Column(name = "status_code")
-    private String statusCode;
-    @Column(name = "status_name")
-    private String statusName;
+@AllArgsConstructor
+@NoArgsConstructor
+public class SampleType {
 
+    @Id
+    @Column(name = "sample_code")
+    private String sampleCode;
+    @Column(name = "sample_name")
+    private String sampleName;
 }

@@ -1,7 +1,9 @@
 package com.douzone.prescribeservice.service;
 
-import com.douzone.prescribeservice.entity.Patient;
+import com.douzone.prescribeservice.entity.Visit;
+
+import java.util.List;
 
 public interface PatientService {
-    Patient findPatient(Long patientNo);
+    List<Visit> findPatient(Long patientNo);
 }

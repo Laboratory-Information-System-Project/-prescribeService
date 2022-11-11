@@ -1,0 +1,9 @@
+GET /prescribe-service/patient/1
+Content-Type: application/json
+Host: localhost:8000
+
+###
+
+GET /prescribe-service/prescribe/1
+Content-Type: application/json
+Host: localhost:8000

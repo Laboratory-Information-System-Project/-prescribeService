@@ -1,15 +1,13 @@
 package com.douzone.prescribeservice.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-@Table
+@Table(name = "order_slip")
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor

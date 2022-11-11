@@ -1,14 +1,14 @@
 package com.douzone.prescribeservice.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Entity
 @Table(name = "inspection_type")
+// @Getter
+// @Setter
+// @EqualsAndHashCode
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,4 +25,8 @@ public class InspectionType {
     @ManyToOne
     @JoinColumn(name = "order_code")
     private Order order;
+
+    @OneToOne
+    @JoinColumn(name = "vessel_code")
+    private Vessel vessel;
 }
