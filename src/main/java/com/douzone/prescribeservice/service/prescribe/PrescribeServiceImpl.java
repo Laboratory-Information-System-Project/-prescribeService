@@ -1,7 +1,6 @@
-package com.douzone.prescribeservice.service;
+package com.douzone.prescribeservice.service.prescribe;
 
 import com.douzone.prescribeservice.entity.Prescribe;
-import com.douzone.prescribeservice.entity.Visit;
 import com.douzone.prescribeservice.repository.prescribe.PrescribeRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

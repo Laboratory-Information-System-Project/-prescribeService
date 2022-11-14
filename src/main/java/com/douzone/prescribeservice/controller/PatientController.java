@@ -1,7 +1,7 @@
 package com.douzone.prescribeservice.controller;
 
 import com.douzone.prescribeservice.entity.Visit;
-import com.douzone.prescribeservice.service.PatientService;
+import com.douzone.prescribeservice.service.patient.PatientService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;

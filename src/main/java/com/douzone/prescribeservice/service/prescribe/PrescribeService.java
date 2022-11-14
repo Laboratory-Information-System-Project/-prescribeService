@@ -1,4 +1,4 @@
-package com.douzone.prescribeservice.service;
+package com.douzone.prescribeservice.service.prescribe;
 
 import com.douzone.prescribeservice.entity.Prescribe;
 

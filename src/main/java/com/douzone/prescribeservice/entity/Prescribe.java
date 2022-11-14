@@ -1,10 +1,7 @@
 package com.douzone.prescribeservice.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.Fetch;
 
 import javax.persistence.*;
@@ -19,6 +16,7 @@ import java.time.LocalDate;
 public class Prescribe {
     @Id
     @Column(name = "prescribe_code")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long prescribeCode;
     @Column(name = "prescribe_contents")
     private String prescribeContents;

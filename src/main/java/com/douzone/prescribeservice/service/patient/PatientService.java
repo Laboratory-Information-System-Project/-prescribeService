@@ -1,4 +1,4 @@
-package com.douzone.prescribeservice.service;
+package com.douzone.prescribeservice.service.patient;
 
 import com.douzone.prescribeservice.entity.Visit;
 
