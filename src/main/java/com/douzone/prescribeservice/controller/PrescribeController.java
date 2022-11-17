@@ -21,7 +21,6 @@ public class PrescribeController {
     public List<Prescribe> getPrescribes(@PathVariable Long visitNo){
 
         return prescribeService.findPrescribes(visitNo);
-
     }
 
 }

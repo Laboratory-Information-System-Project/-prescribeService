@@ -7,4 +7,6 @@ import java.util.List;
 @NoRepositoryBean
 public interface CustomPrescribeRepository {
     long updateStatus(List<Long> prescribeCode, String status);
+
+    // String findDoctorCodeByVisitCode();
 }

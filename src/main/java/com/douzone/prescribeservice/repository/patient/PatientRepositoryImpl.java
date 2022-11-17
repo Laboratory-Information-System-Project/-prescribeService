@@ -1,9 +1,6 @@
 package com.douzone.prescribeservice.repository.patient;
 
-import com.douzone.prescribeservice.entity.Patient;
-import com.douzone.prescribeservice.entity.QPatient;
-import com.douzone.prescribeservice.entity.QVisit;
-import com.douzone.prescribeservice.entity.Visit;
+import com.douzone.prescribeservice.entity.*;
 import org.springframework.data.jpa.repository.support.QuerydslRepositorySupport;
 
 import java.util.List;
@@ -16,12 +13,21 @@ public class PatientRepositoryImpl extends QuerydslRepositorySupport implements 
     }
 
     @Override
-    public List<Visit> findPatientInfo(Long patientNo) {
+    public List<Prescribe> findPatientInfo(Long patientNo) {
         QPatient patient = QPatient.patient;
         QVisit visit = QVisit.visit;
+        QPrescribe prescribe = QPrescribe.prescribe;
 
-        return from(visit)
+        return from(prescribe)
+                .join(prescribe.visit, visit)
                 .join(visit.patient, patient)
-                .where(patient.patientNo.eq(patientNo)).stream().collect(Collectors.toList());
+                .where(patient.patientNo.eq(patientNo))
+                .stream().collect(Collectors.toList());
+
+        // ObjectMapper obj = new ObjectMapper();
+        // obj.
+        // return from(visit)
+        //         .join(visit.patient, patient)
+        //         .where(patient.patientNo.eq(patientNo)).stream().collect(Collectors.toMap());
     }
 }

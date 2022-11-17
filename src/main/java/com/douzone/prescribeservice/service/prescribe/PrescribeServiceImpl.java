@@ -15,6 +15,7 @@ public class PrescribeServiceImpl implements PrescribeService{
     @Override
     public List<Prescribe> findPrescribes(Long visitNo) {
         return prescribeRepository.findAllByVisitVisitCode(visitNo);
-        // return null;
     }
+
+
 }
