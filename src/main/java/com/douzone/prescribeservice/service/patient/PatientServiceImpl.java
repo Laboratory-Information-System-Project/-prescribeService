@@ -1,9 +1,8 @@
 package com.douzone.prescribeservice.service.patient;
 
-import com.douzone.prescribeservice.entity.Prescribe;
+import com.douzone.prescribeservice.domain.PatientInfoDto;
 import com.douzone.prescribeservice.repository.patient.PatientRepository;
 import com.douzone.prescribeservice.repository.prescribe.PrescribeRepository;
-import com.douzone.prescribeservice.util.ConvertMap;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.modelmapper.ModelMapper;
@@ -22,16 +21,16 @@ public class PatientServiceImpl implements PatientService{
     private final PrescribeRepository prescribeRepository;
     private final ModelMapper modelMapper;
     @Override
-    public List<Map<String, Object>> findPatient(Long patientNo) {
-        List<Prescribe> prescribes = patientRepository.findPatientInfo(patientNo);
-        List<Map<String,Object>> result = new ArrayList<>();
+    public List<PatientInfoDto> findPatient(Long patientNo) {
+        List<PatientInfoDto> patientInfo = patientRepository.findPatientInfo(patientNo);
+        List<Long> visitCodeList = new ArrayList<>();
 
-        for (int i = 0; i < prescribes.size(); i++) {
-            Map<String, Object> visitInfo = ConvertMap.convertToMap(prescribes.get(i));
-            result.add(visitInfo);
+        for (int i = 0; i < patientInfo.size(); i++) {
+            visitCodeList.add(patientInfo.get(i).getVisitCode());
         }
 
+        Map<Long, String> result = prescribeRepository.findDoctorIdByVisitVisitCode(visitCodeList);
 
-        return result;
+        return patientInfo;
     }
 }
