@@ -22,6 +22,4 @@ public class PatientController {
 
         return patientService.findPatient(patientNo);
     }
-
-
 }
