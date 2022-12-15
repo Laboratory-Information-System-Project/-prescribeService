@@ -38,5 +38,6 @@ public class Patient {
     @Column(name = "patient_gender")
     private String patientGender;
 
-
+    @Column(name = "patient_memo")
+    private String patientMemo;
 }
